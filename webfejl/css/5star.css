@@ -1,0 +1,56 @@
+/*[License](https://github.com/mfleming1989/StarRating-Pure-CSS/blob/master/LICENSE)*/
+.rate-area {
+    left: -100px;
+    border-style: none;
+}
+
+.rate-area:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rate-area:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:400%;
+    line-height:1.2;
+    color:darkgrey;
+    text-shadow:1px 1px #bbb;
+}
+
+.rate-area:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rate-area > input:checked ~ label {
+    color: white;
+    text-shadow:1px 1px whitesmoke;
+    font-size:450% !important;
+}
+
+.rate-area:not(:checked) > label:hover,
+.rate-area:not(:checked) > label:hover ~ label {
+    color: white;
+    
+}
+
+.rate-area > input:checked + label:hover,
+.rate-area > input:checked + label:hover ~ label,
+.rate-area > input:checked ~ label:hover,
+.rate-area > input:checked ~ label:hover ~ label,
+.rate-area > label:hover ~ input:checked ~ label {
+    color: white;
+    text-shadow: 1px 1px whitesmoke;   
+    
+}
+
+.rate-area > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
